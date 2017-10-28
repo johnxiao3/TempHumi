@@ -1,0 +1,108 @@
+C51 COMPILER V9.00   DHT11                                                                 10/28/2017 11:12:12 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE DHT11
+OBJECT MODULE PLACED IN DHT11.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE DHT11.c OPTIMIZE(6,SPEED) DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "Fx2.h"
+   2          #include "fx2regs.h"
+   3          #include "string.h"
+   4          
+   5          #include "LED_Key.h"
+   6          
+   7          #include "ssd1306.h"
+   8          
+   9          #include "DHT11.h"
+  10          
+  11          int dht11_dat[5] = { 0, 0, 0, 0, 0 };
+  12          
+  13          void SSDShow(unsigned char i)
+  14          {
+  15   1              unsigned char h,l;
+  16   1              h= (i>>4)&0x0f;
+  17   1              l=      i&0x0f;
+  18   1              if (h<0x0a)
+  19   1                      ssd1306_printchar(h+0x30);
+  20   1              else
+  21   1                      ssd1306_printchar(h+0x57);
+  22   1              if (l<0x0a)
+  23   1                      ssd1306_printchar(l+0x30);
+  24   1              else
+  25   1                      ssd1306_printchar(l+0x57);      
+  26   1      }
+  27           
+  28          void read_dht11_dat()
+  29          {
+  30   1               unsigned char i,j;
+  31   1               unsigned char a,b,c,d,e,f;
+  32   1               a=b=c=d=e=f=0;
+  33   1               OED=0xff;
+  34   1               DHT=0;
+  35   1               Delay(20);
+  36   1               DHT=1;
+  37   1               OED=0x00;
+  38   1               while(DHT==1)
+  39   1                      ;
+  40   1               while(DHT==0)
+  41   1                      ;
+  42   1               while(DHT==1)
+  43   1                      ;
+  44   1              for (i=0;i<5;i++)
+  45   1              {       
+  46   2                      for(j=0;j<8;j++)
+  47   2                      {
+  48   3                              a=0;
+  49   3                              while(DHT==0);
+  50   3                              while(DHT==1)
+  51   3                                      a++;
+  52   3                              if (a>0x0f)
+  53   3                                 dht11_dat[i]|=(0x80>>j);
+  54   3                      }
+  55   2               } 
+C51 COMPILER V9.00   DHT11                                                                 10/28/2017 11:12:12 PAGE 2   
+
+  56   1               
+  57   1               SSDShow(dht11_dat[0]);
+  58   1               ssd1306_printchar('-');
+  59   1               SSDShow(dht11_dat[1]);
+  60   1               ssd1306_printchar('-');
+  61   1               SSDShow(dht11_dat[2]);
+  62   1               ssd1306_printchar('-');
+  63   1               SSDShow(dht11_dat[3]);
+  64   1               ssd1306_printchar('-');
+  65   1               ssd1306_printchar('-');
+  66   1               ssd1306_printchar('-');
+  67   1               ssd1306_printchar('-');
+  68   1               ssd1306_printchar('-');
+  69   1      
+  70   1               ssd1306_printf1("----------------");    
+  71   1               ssd1306_printf1("Humidity:");
+  72   1               ssd1306_printchar(dht11_dat[0]/10+0x30);
+  73   1               ssd1306_printchar((dht11_dat[0]%10)+0x30);
+  74   1               ssd1306_printchar('%');
+  75   1               ssd1306_printf1("    ");
+  76   1               ssd1306_printf1("Temperat:");
+  77   1               ssd1306_printchar(dht11_dat[2]/10+0x30);
+  78   1               ssd1306_printchar((dht11_dat[2]%10)+0x30);
+  79   1               ssd1306_printchar('C');
+  80   1               //SSDShow(dht11_dat[0]);
+  81   1      }
+  82                                          
+*** WARNING C316 IN LINE 82 OF DHT11.c: unterminated conditionals
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    361    ----
+   CONSTANT SIZE    =     42    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     10      10
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

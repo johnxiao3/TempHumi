@@ -1,0 +1,8 @@
+"dev_io.obj",
+"LED_Key.obj",
+"iic_comm.obj",
+"ESP8266.obj",
+"ssd1306.obj",
+"..\..\Target\Lib\LP\EZUSB.LIB" 
+TO "dev_io" 
+RAMSIZE(256) 
