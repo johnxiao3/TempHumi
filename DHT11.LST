@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   DHT11                                                                 10/28/2017 11:12:12 PAGE 1   
+C51 COMPILER V9.00   DHT11                                                                 10/28/2017 18:12:10 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE DHT11
@@ -37,69 +37,74 @@ line level    source
   28          void read_dht11_dat()
   29          {
   30   1               unsigned char i,j;
-  31   1               unsigned char a,b,c,d,e,f;
-  32   1               a=b=c=d=e=f=0;
-  33   1               OED=0xff;
-  34   1               DHT=0;
-  35   1               Delay(20);
-  36   1               DHT=1;
-  37   1               OED=0x00;
-  38   1               while(DHT==1)
-  39   1                      ;
-  40   1               while(DHT==0)
-  41   1                      ;
-  42   1               while(DHT==1)
-  43   1                      ;
-  44   1              for (i=0;i<5;i++)
-  45   1              {       
-  46   2                      for(j=0;j<8;j++)
-  47   2                      {
-  48   3                              a=0;
-  49   3                              while(DHT==0);
-  50   3                              while(DHT==1)
-  51   3                                      a++;
-  52   3                              if (a>0x0f)
-  53   3                                 dht11_dat[i]|=(0x80>>j);
-  54   3                      }
-  55   2               } 
-C51 COMPILER V9.00   DHT11                                                                 10/28/2017 11:12:12 PAGE 2   
+  31   1               unsigned char a;
+  32   1               dht11_dat[0]=0;
+  33   1               dht11_dat[1]=0;
+  34   1               dht11_dat[2]=0;
+  35   1               dht11_dat[3]=0;
+  36   1               dht11_dat[4]=0;
+  37   1               a=0;
+  38   1               OED=0xff;
+  39   1               DHT=0;
+  40   1               Delay(20);
+  41   1               DHT=1;
+  42   1               OED=0xef;
+  43   1               while(DHT==1)
+  44   1                      ;
+  45   1               while(DHT==0)
+  46   1                      ;
+  47   1               while(DHT==1)
+  48   1                      ;
+  49   1              for (i=0;i<5;i++)
+  50   1              {       
+  51   2                      for(j=0;j<8;j++)
+  52   2                      {
+  53   3                              a=0;
+  54   3                              while(DHT==0);
+  55   3                              while(DHT==1)
+C51 COMPILER V9.00   DHT11                                                                 10/28/2017 18:12:10 PAGE 2   
 
-  56   1               
-  57   1               SSDShow(dht11_dat[0]);
-  58   1               ssd1306_printchar('-');
-  59   1               SSDShow(dht11_dat[1]);
-  60   1               ssd1306_printchar('-');
-  61   1               SSDShow(dht11_dat[2]);
-  62   1               ssd1306_printchar('-');
-  63   1               SSDShow(dht11_dat[3]);
-  64   1               ssd1306_printchar('-');
+  56   3                                      a++;
+  57   3                              if (a>0x0f)
+  58   3                                 dht11_dat[i]|=(0x80>>j);
+  59   3                      }
+  60   2               } 
+  61   1               
+  62   1               SSDShow(dht11_dat[0]);
+  63   1               ssd1306_printchar('-');
+  64   1               SSDShow(dht11_dat[1]);
   65   1               ssd1306_printchar('-');
-  66   1               ssd1306_printchar('-');
+  66   1               SSDShow(dht11_dat[2]);
   67   1               ssd1306_printchar('-');
-  68   1               ssd1306_printchar('-');
-  69   1      
-  70   1               ssd1306_printf1("----------------");    
-  71   1               ssd1306_printf1("Humidity:");
-  72   1               ssd1306_printchar(dht11_dat[0]/10+0x30);
-  73   1               ssd1306_printchar((dht11_dat[0]%10)+0x30);
-  74   1               ssd1306_printchar('%');
-  75   1               ssd1306_printf1("    ");
-  76   1               ssd1306_printf1("Temperat:");
-  77   1               ssd1306_printchar(dht11_dat[2]/10+0x30);
-  78   1               ssd1306_printchar((dht11_dat[2]%10)+0x30);
-  79   1               ssd1306_printchar('C');
-  80   1               //SSDShow(dht11_dat[0]);
-  81   1      }
-  82                                          
-*** WARNING C316 IN LINE 82 OF DHT11.c: unterminated conditionals
+  68   1               SSDShow(dht11_dat[3]);
+  69   1               ssd1306_printchar('-');
+  70   1               ssd1306_printchar('-');
+  71   1               ssd1306_printchar('-');
+  72   1               ssd1306_printchar('-');
+  73   1               ssd1306_printchar('-');
+  74   1      
+  75   1               ssd1306_printf1("----------------");    
+  76   1               ssd1306_printf1("Humidity:");
+  77   1               ssd1306_printchar(dht11_dat[0]/10+0x30);
+  78   1               ssd1306_printchar((dht11_dat[0]%10)+0x30);
+  79   1               ssd1306_printchar('%');
+  80   1               ssd1306_printf1("    ");
+  81   1               ssd1306_printf1("Temperat:");
+  82   1               ssd1306_printchar(dht11_dat[2]/10+0x30);
+  83   1               ssd1306_printchar((dht11_dat[2]%10)+0x30);
+  84   1               ssd1306_printchar('C');
+  85   1               //SSDShow(dht11_dat[0]);
+  86   1      }
+  87                                          
+*** WARNING C316 IN LINE 87 OF DHT11.c: unterminated conditionals
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    361    ----
+   CODE SIZE        =    371    ----
    CONSTANT SIZE    =     42    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     10      10
+   DATA SIZE        =     10       5
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

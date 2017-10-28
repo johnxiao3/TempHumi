@@ -28,13 +28,18 @@ void SSDShow(unsigned char i)
 void read_dht11_dat()
 {
 	 unsigned char i,j;
-	 unsigned char a,b,c,d,e,f;
-	 a=b=c=d=e=f=0;
+	 unsigned char a;
+	 dht11_dat[0]=0;
+	 dht11_dat[1]=0;
+	 dht11_dat[2]=0;
+	 dht11_dat[3]=0;
+	 dht11_dat[4]=0;
+	 a=0;
 	 OED=0xff;
 	 DHT=0;
 	 Delay(20);
 	 DHT=1;
-	 OED=0x00;
+	 OED=0xef;
 	 while(DHT==1)
 	 	;
 	 while(DHT==0)

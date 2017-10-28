@@ -182,12 +182,12 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>1</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <Focus>1</Focus>
-      <ColumnNumber>54</ColumnNumber>
+      <ColumnNumber>24</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>145</TopLine>
-      <CurrentLine>163</CurrentLine>
+      <TopLine>36</TopLine>
+      <CurrentLine>37</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\dev_io.c</PathWithFileName>
       <FilenameWithoutPath>dev_io.c</FilenameWithoutPath>
@@ -215,12 +215,12 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>2</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>45</TopLine>
-      <CurrentLine>45</CurrentLine>
+      <TopLine>66</TopLine>
+      <CurrentLine>66</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\iic_comm.c</PathWithFileName>
       <FilenameWithoutPath>iic_comm.c</FilenameWithoutPath>
@@ -229,12 +229,12 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>3</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>73</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>73</TopLine>
-      <CurrentLine>92</CurrentLine>
+      <TopLine>31</TopLine>
+      <CurrentLine>47</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\ESP8266.c</PathWithFileName>
       <FilenameWithoutPath>ESP8266.c</FilenameWithoutPath>
@@ -245,10 +245,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>7</ColumnNumber>
+      <ColumnNumber>28</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>163</TopLine>
-      <CurrentLine>163</CurrentLine>
+      <TopLine>109</TopLine>
+      <CurrentLine>119</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\ssd1306.c</PathWithFileName>
       <FilenameWithoutPath>ssd1306.c</FilenameWithoutPath>
@@ -273,20 +273,34 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>27</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>7</TopLine>
-      <CurrentLine>23</CurrentLine>
+      <TopLine>34</TopLine>
+      <CurrentLine>34</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\LED_Key.c</PathWithFileName>
       <FilenameWithoutPath>LED_Key.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>0</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>13</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>23</TopLine>
+      <CurrentLine>39</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\DHT11.c</PathWithFileName>
+      <FilenameWithoutPath>DHT11.c</FilenameWithoutPath>
     </File>
   </Group>
 
   <AlienFiles>
     <PathWithFilename>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\Firmware\Dev_io - iic\MQTTUnsubscribe.h</PathWithFilename>
     <TopLine>1</TopLine>
-    <CurrentLine>25</CurrentLine>
+    <CurrentLine>1</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -310,9 +324,9 @@
   </AlienFiles>
 
   <AlienFiles>
-    <PathWithFilename>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\Firmware\Mydevice-TCPIP\SSD1306.H</PathWithFilename>
-    <TopLine>16</TopLine>
-    <CurrentLine>43</CurrentLine>
+    <PathWithFilename>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\Firmware\TempHumi\SSD1306.H</PathWithFilename>
+    <TopLine>30</TopLine>
+    <CurrentLine>41</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -336,9 +350,139 @@
   </AlienFiles>
 
   <AlienFiles>
-    <PathWithFilename>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\Firmware\Mydevice-TCPIP\ESP8266.H</PathWithFilename>
+    <PathWithFilename>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\Firmware\TempHumi\ESP8266.H</PathWithFilename>
     <TopLine>1</TopLine>
-    <CurrentLine>10</CurrentLine>
+    <CurrentLine>1</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\Firmware\TempHumi\DHT11.H</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>7</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\Firmware\TempHumi\LED_KEY.H</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>6</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\Firmware\TempHumi\IIC_COMM.H</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>1</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\TARGET\INC\FX2.H</PathWithFilename>
+    <TopLine>112</TopLine>
+    <CurrentLine>112</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\TARGET\INC\FX2REGS.H</PathWithFilename>
+    <TopLine>435</TopLine>
+    <CurrentLine>444</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -1698,47 +1842,101 @@
   </WinLayout>
 
   <MDIGroups>
-    <Orientation>1</Orientation>
+    <Orientation>3</Orientation>
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
-      <Size>100</Size>
-      <ActiveTab>1</ActiveTab>
+      <Size>60</Size>
+      <ActiveTab>2</ActiveTab>
       <Documents>
         <Doc>
-          <Name>ESP8266.H</Name>
-          <ColumnNumber>17</ColumnNumber>
+          <Name>.\LED_Key.c</Name>
+          <ColumnNumber>27</ColumnNumber>
+          <TopLine>34</TopLine>
+          <CurrentLine>34</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>LED_KEY.H</Name>
+          <ColumnNumber>13</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>10</CurrentLine>
+          <CurrentLine>6</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\DHT11.c</Name>
+          <ColumnNumber>13</ColumnNumber>
+          <TopLine>23</TopLine>
+          <CurrentLine>39</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\ESP8266.c</Name>
-          <ColumnNumber>73</ColumnNumber>
-          <TopLine>73</TopLine>
-          <CurrentLine>92</CurrentLine>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>31</TopLine>
+          <CurrentLine>47</CurrentLine>
         </Doc>
         <Doc>
-          <Name>.\dev_io.c</Name>
-          <ColumnNumber>54</ColumnNumber>
-          <TopLine>145</TopLine>
-          <CurrentLine>163</CurrentLine>
+          <Name>ESP8266.H</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>1</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\iic_comm.c</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>66</TopLine>
+          <CurrentLine>66</CurrentLine>
         </Doc>
         <Doc>
           <Name>SSD1306.H</Name>
-          <ColumnNumber>22</ColumnNumber>
-          <TopLine>16</TopLine>
-          <CurrentLine>43</CurrentLine>
+          <ColumnNumber>21</ColumnNumber>
+          <TopLine>30</TopLine>
+          <CurrentLine>41</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\dev_io.c</Name>
+          <ColumnNumber>24</ColumnNumber>
+          <TopLine>36</TopLine>
+          <CurrentLine>37</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\..\TARGET\INC\FX2REGS.H</Name>
+          <ColumnNumber>14</ColumnNumber>
+          <TopLine>435</TopLine>
+          <CurrentLine>444</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\..\TARGET\INC\FX2.H</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>112</TopLine>
+          <CurrentLine>112</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>IIC_COMM.H</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>1</CurrentLine>
         </Doc>
         <Doc>
           <Name>E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\Firmware\Dev_io - iic\MQTTUnsubscribe.h</Name>
           <ColumnNumber>47</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>25</CurrentLine>
+          <CurrentLine>1</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\ssd1306.c</Name>
-          <ColumnNumber>7</ColumnNumber>
-          <TopLine>163</TopLine>
-          <CurrentLine>163</CurrentLine>
+          <ColumnNumber>28</ColumnNumber>
+          <TopLine>109</TopLine>
+          <CurrentLine>119</CurrentLine>
+        </Doc>
+      </Documents>
+    </MDIGroup>
+    <MDIGroup>
+      <Size>40</Size>
+      <ActiveTab>0</ActiveTab>
+      <Documents>
+        <Doc>
+          <Name>DHT11.H</Name>
+          <ColumnNumber>20</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>7</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

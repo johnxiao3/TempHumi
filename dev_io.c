@@ -36,7 +36,7 @@ void main(void)
 	OEE=0x0f;
 	Delay(1000);
 	PD5=1;	//PD5 is the display
-	PD7=0;   //PD7 is channel 1; 0 is off; 1 is on;
+	//PD7=0;   //PD7 is channel 1; 0 is off; 1 is on;
 	LEDFlash();
 	
 	I2CInit();
