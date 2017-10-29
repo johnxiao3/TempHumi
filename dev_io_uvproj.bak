@@ -43,7 +43,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>DeviceUDP</OutputName>
+          <OutputName>TempHumi</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -72,7 +72,7 @@
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>..\..\Bin\hex2bix -i -f 0xC2 -o DeviceUDP.iic DeviceUDP.hex</UserProg1Name>
+            <UserProg1Name>..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -375,6 +375,11 @@
               <FileName>LED_Key.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\LED_Key.c</FilePath>
+            </File>
+            <File>
+              <FileName>DHT11.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\DHT11.c</FilePath>
             </File>
           </Files>
         </Group>
