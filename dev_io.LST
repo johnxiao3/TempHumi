@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   DEV_IO                                                                10/28/2017 20:59:31 PAGE 1   
+C51 COMPILER V9.00   DEV_IO                                                                12/17/2017 22:58:50 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE DEV_IO
@@ -62,7 +62,7 @@ line level    source
   51   1              ssd1306_printf1("     by John    ");
   52   1              //Delay(5000);
   53   1              read_dht11_dat();
-C51 COMPILER V9.00   DEV_IO                                                                10/28/2017 20:59:31 PAGE 2   
+C51 COMPILER V9.00   DEV_IO                                                                12/17/2017 22:58:50 PAGE 2   
 
   54   1              Delay(5000);
   55   1              goto Restart0;

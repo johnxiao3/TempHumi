@@ -35,17 +35,23 @@ void read_dht11_dat()
 	 dht11_dat[3]=0;
 	 dht11_dat[4]=0;
 	 a=0;
-	 OED=0xff;
+Resignal:
+	 OED=0xff;	  //DHT PD4
 	 DHT=0;
 	 Delay(20);
 	 DHT=1;
 	 OED=0xef;
-	 while(DHT==1)
-	 	;
-	 while(DHT==0)
-	 	;
-	 while(DHT==1)
-	 	;
+	 while((DHT==1)&&(a<254))
+	 	a++;
+	 if (a>=254) goto Resignal; 
+	 a=0;
+	 while((DHT==0)&&(a<254))
+	 	a++;
+	if (a>=254) goto Resignal;
+	 while((DHT==1)&&(a<254))
+	 	a++;
+	if (a>=254) goto Resignal;
+	a=0;
 	for (i=0;i<5;i++)
 	{	
 		for(j=0;j<8;j++)
@@ -59,18 +65,18 @@ void read_dht11_dat()
 		}
 	 } 
 	 
-	 SSDShow(dht11_dat[0]);
-	 ssd1306_printchar('-');
-	 SSDShow(dht11_dat[1]);
-	 ssd1306_printchar('-');
-	 SSDShow(dht11_dat[2]);
-	 ssd1306_printchar('-');
-	 SSDShow(dht11_dat[3]);
-	 ssd1306_printchar('-');
-	 ssd1306_printchar('-');
-	 ssd1306_printchar('-');
-	 ssd1306_printchar('-');
-	 ssd1306_printchar('-');
+	 //SSDShow(dht11_dat[0]);
+	 //ssd1306_printchar('-');
+	 //SSDShow(dht11_dat[1]);
+	 //ssd1306_printchar('-');
+	 //SSDShow(dht11_dat[2]);
+	 //ssd1306_printchar('-');
+	 //SSDShow(dht11_dat[3]);
+	 //ssd1306_printchar('-');
+	 //ssd1306_printchar('-');
+	 //ssd1306_printchar('-');
+	 //ssd1306_printchar('-');
+	 //ssd1306_printchar('-');
 
 	 ssd1306_printf1("----------------");	 
 	 ssd1306_printf1("Humidity:");

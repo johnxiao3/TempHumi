@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        10/28/2017  20:59:31  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/17/2017  22:58:51  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -38,7 +38,8 @@ LINK MAP OF MODULE:  TempHumi (DEV_IO)
             DATA    002AH     0003H     UNIT         ?DT?SSD1306
             DATA    002DH     0002H     UNIT         ?DT?DEV_IO
             DATA    002FH     0002H     UNIT         ?DT?SSD1306_DRAW?SSD1306
-            IDATA   0031H     0001H     UNIT         ?STACK
+            DATA    0031H     0002H     UNIT         ?DT?_SSDSHOW?DHT11
+            IDATA   0033H     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
@@ -58,10 +59,10 @@ LINK MAP OF MODULE:  TempHumi (DEV_IO)
             CODE    0CBDH     002AH     UNIT         ?CO?DHT11
             CODE    0CE7H     0029H     UNIT         ?PR?LEDFLOW?LED_KEY
             CODE    0D10H     0029H     UNIT         ?PR?LEDFLOWREV?LED_KEY
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 2
+
+
             CODE    0D39H     0028H     UNIT         ?PR?_I2CSEND?IIC_COMM
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 2
-
-
             CODE    0D61H     0020H     UNIT         ?PR?SSD1306_DRAW?SSD1306
             CODE    0D81H     001DH     UNIT         ?PR?DELAY1MS?LED_KEY
             CODE    0D9EH     001CH     UNIT         ?PR?I2CREAD?IIC_COMM
@@ -118,10 +119,10 @@ SEGMENT                                  DATA_GROUP
   +--> ?PR?_I2CSEND?IIC_COMM
   +--> ?PR?I2CSTOP?IIC_COMM
 
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 3
+
+
 ?PR?SSD1306_CLEAR?SSD1306              000EH    0002H
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 3
-
-
   +--> ?PR?_WRITECOMMAND?SSD1306
   +--> ?PR?_WRITEDATA?SSD1306
 
@@ -140,15 +141,11 @@ SEGMENT                                  DATA_GROUP
 
 ?PR?READ_DHT11_DAT?DHT11               000EH    0003H
   +--> ?PR?_DELAY?LED_KEY
-  +--> ?PR?_SSDSHOW?DHT11
-  +--> ?PR?_SSD1306_PRINTCHAR?SSD1306
   +--> ?CO?DHT11
   +--> ?PR?_SSD1306_PRINTF1?SSD1306
-
-?PR?_SSDSHOW?DHT11                     0011H    0002H
   +--> ?PR?_SSD1306_PRINTCHAR?SSD1306
 
-?PR?_SSD1306_PRINTCHAR?SSD1306         0013H    0002H
+?PR?_SSD1306_PRINTCHAR?SSD1306         0011H    0002H
   +--> ?CO?SSD1306
   +--> ?PR?_WRITEDATA?SSD1306
 
@@ -179,12 +176,12 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   C:0B3BH         LINE#         22
   C:0B3BH         LINE#         30
   C:0B40H         LINE#         31
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 4
-
-
   C:0B44H         LINE#         32
   C:0B48H         LINE#         34
   C:0B4BH         LINE#         35
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 4
+
+
   C:0B4EH         LINE#         36
   C:0B51H         LINE#         37
   C:0B58H         LINE#         38
@@ -239,12 +236,12 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   C:0E6FH         LINE#         24
   C:0E71H         LINE#         25
   C:0E73H         LINE#         26
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 5
-
-
   -------         ENDPROC       I2CRESTART
   -------         PROC          I2CSTOP
   C:0E74H         LINE#         28
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 5
+
+
   C:0E74H         LINE#         29
   C:0E74H         LINE#         30
   C:0E76H         LINE#         31
@@ -299,12 +296,12 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   -------         ENDPROC       _I2CSEND
   -------         PROC          I2CREAD
   -------         DO            
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 6
-
-
   D:0006H         SYMBOL        i
   D:0007H         SYMBOL        Data
   -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 6
+
+
   C:0D9EH         LINE#         75
   C:0D9EH         LINE#         76
   C:0D9EH         LINE#         77
@@ -359,12 +356,12 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   -------         PROC          SSD1306_INITALIZE
   C:0ABDH         LINE#         132
   C:0ABDH         LINE#         133
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 7
-
-
   C:0ABDH         LINE#         141
   C:0AC2H         LINE#         142
   C:0AC7H         LINE#         143
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 7
+
+
   C:0ACCH         LINE#         144
   C:0AD1H         LINE#         145
   C:0AD6H         LINE#         146
@@ -406,9 +403,9 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   C:0CBCH         LINE#         183
   -------         ENDPROC       SSD1306_CLEAR
   -------         PROC          _SSD1306_PRINTCHAR
-  D:0013H         SYMBOL        dat
+  D:0011H         SYMBOL        dat
   -------         DO            
-  D:0014H         SYMBOL        i
+  D:0012H         SYMBOL        i
   -------         ENDDO         
   C:0C55H         LINE#         185
   C:0C57H         LINE#         186
@@ -419,12 +416,12 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   C:0C8CH         LINE#         192
   -------         ENDPROC       _SSD1306_PRINTCHAR
   -------         PROC          SSD1306_DRAW
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 8
-
-
   -------         DO            
   D:0006H         SYMBOL        i
   D:002FH         SYMBOL        j
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 8
+
+
   -------         ENDDO         
   C:0D61H         LINE#         194
   C:0D61H         LINE#         195
@@ -479,12 +476,12 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   C:088CH         LINE#         237
   C:088CH         LINE#         238
   C:0891H         LINE#         239
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 9
-
-
   C:0895H         LINE#         241
   C:08B4H         LINE#         242
   C:08B4H         LINE#         243
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 9
+
+
   C:08D1H         LINE#         244
   C:08D6H         LINE#         245
   C:0907H         LINE#         247
@@ -539,12 +536,12 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   C:0DBFH         LINE#         26
   C:0DC2H         LINE#         27
   C:0DC7H         LINE#         28
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 10
-
-
   C:0DCAH         LINE#         29
   C:0DCFH         LINE#         30
   C:0DD2H         LINE#         31
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 10
+
+
   C:0DD4H         LINE#         32
   -------         ENDPROC       SCANKEY
   -------         PROC          LEDFLOW
@@ -599,12 +596,12 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   C:0C37H         LINE#         75
   C:0C37H         LINE#         77
   C:0C43H         LINE#         78
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 11
-
-
   C:0C43H         LINE#         79
   C:0C43H         LINE#         80
   C:0C46H         LINE#         81
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 11
+
+
   C:0C48H         LINE#         82
   C:0C48H         LINE#         83
   C:0C4BH         LINE#         84
@@ -626,8 +623,8 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   -------         PROC          _SSDSHOW
   D:0007H         SYMBOL        i
   -------         DO            
-  D:0011H         SYMBOL        h
-  D:0012H         SYMBOL        l
+  D:0031H         SYMBOL        h
+  D:0032H         SYMBOL        l
   -------         ENDDO         
   C:0BDEH         LINE#         13
   C:0BDEH         LINE#         14
@@ -646,6 +643,7 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   D:000EH         SYMBOL        i
   D:000FH         SYMBOL        j
   D:0010H         SYMBOL        a
+  C:063AH         SYMBOL        Resignal
   -------         ENDDO         
   C:0623H         LINE#         28
   C:0623H         LINE#         29
@@ -656,51 +654,48 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   C:0634H         LINE#         36
   C:0638H         LINE#         37
   C:063AH         LINE#         38
-  C:063DH         LINE#         39
-  C:063FH         LINE#         40
-  C:0645H         LINE#         41
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 12
+  C:063AH         LINE#         39
+  C:063DH         LINE#         40
+  C:063FH         LINE#         41
+  C:0646H         LINE#         42
+  C:0648H         LINE#         43
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 12
 
 
-  C:0647H         LINE#         42
-  C:064AH         LINE#         43
-  C:064DH         LINE#         45
-  C:0650H         LINE#         47
-  C:0653H         LINE#         49
-  C:0656H         LINE#         50
-  C:0656H         LINE#         51
-  C:0659H         LINE#         52
-  C:0659H         LINE#         53
-  C:065CH         LINE#         54
-  C:065FH         LINE#         55
-  C:0662H         LINE#         56
-  C:0666H         LINE#         57
-  C:066DH         LINE#         58
-  C:0698H         LINE#         59
-  C:069FH         LINE#         60
-  C:06A6H         LINE#         62
-  C:06ABH         LINE#         63
-  C:06B0H         LINE#         64
-  C:06B5H         LINE#         65
-  C:06BAH         LINE#         66
-  C:06BFH         LINE#         67
-  C:06C4H         LINE#         68
-  C:06C9H         LINE#         69
-  C:06CEH         LINE#         70
-  C:06D3H         LINE#         71
-  C:06D8H         LINE#         72
-  C:06DDH         LINE#         73
-  C:06E2H         LINE#         75
-  C:06EBH         LINE#         76
-  C:06F4H         LINE#         77
-  C:0706H         LINE#         78
-  C:0718H         LINE#         79
-  C:071DH         LINE#         80
-  C:0726H         LINE#         81
-  C:072FH         LINE#         82
-  C:0741H         LINE#         83
-  C:0753H         LINE#         84
-  C:0758H         LINE#         86
+  C:064BH         LINE#         44
+  C:0655H         LINE#         45
+  C:0659H         LINE#         46
+  C:0660H         LINE#         47
+  C:0663H         LINE#         48
+  C:066DH         LINE#         49
+  C:0671H         LINE#         50
+  C:0678H         LINE#         51
+  C:0682H         LINE#         52
+  C:0686H         LINE#         53
+  C:068DH         LINE#         54
+  C:0690H         LINE#         55
+  C:0692H         LINE#         56
+  C:0692H         LINE#         57
+  C:0695H         LINE#         58
+  C:0695H         LINE#         59
+  C:0698H         LINE#         60
+  C:069BH         LINE#         61
+  C:069EH         LINE#         62
+  C:06A2H         LINE#         63
+  C:06A9H         LINE#         64
+  C:06D4H         LINE#         65
+  C:06DBH         LINE#         66
+  C:06E2H         LINE#         81
+  C:06EBH         LINE#         82
+  C:06F4H         LINE#         83
+  C:0706H         LINE#         84
+  C:0718H         LINE#         85
+  C:071DH         LINE#         86
+  C:0726H         LINE#         87
+  C:072FH         LINE#         88
+  C:0741H         LINE#         89
+  C:0753H         LINE#         90
+  C:0758H         LINE#         92
   -------         ENDPROC       READ_DHT11_DAT
   -------         ENDMOD        DHT11
 
@@ -719,13 +714,13 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
   -------         MODULE        ?C?CLDPTR
   C:09C3H         PUBLIC        ?C?CLDPTR
   -------         ENDMOD        ?C?CLDPTR
-BL51 BANKED LINKER/LOCATER V6.22                                                      10/28/2017  20:59:31  PAGE 13
-
-
 
   -------         MODULE        ?C?UIDIV
   C:09DCH         PUBLIC        ?C?UIDIV
   -------         ENDMOD        ?C?UIDIV
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/17/2017  22:58:51  PAGE 13
+
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2CRESTART?IIC_COMM
@@ -748,5 +743,8 @@ SYMBOL TABLE OF MODULE:  TempHumi (DEV_IO)
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LEDKEYTEST?LED_KEY
 
-Program Size: data=50.0 xdata=0 code=3742
-LINK/LOCATE RUN COMPLETE.  7 WARNING(S),  0 ERROR(S)
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+
+Program Size: data=52.0 xdata=0 code=3742
+LINK/LOCATE RUN COMPLETE.  8 WARNING(S),  0 ERROR(S)
