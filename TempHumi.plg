@@ -4,14 +4,13 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 E:\Cypress\USB1\CY3684_EZ-USB_FX2LP_DVK\1.0\Firmware\TempHumi\dev_io.uvproj
-Project File Date:  10/28/2017
+Project File Date:  12/20/2017
 
 <h2>Output:</h2>
 Build target 'Target 1'
 compiling dev_io.c...
-dev_io.c(8): warning C318: can't open file 'esp8266.h'
-dev_io.c(9): warning C318: can't open file 'MQTTPACKET.H'
-dev_io.c(59): warning C316: unterminated conditionals
+DEV_IO.C(139): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(260): warning C316: unterminated conditionals
 compiling iic_comm.c...
 iic_comm.c(87): warning C316: unterminated conditionals
 compiling ssd1306.c...
@@ -19,8 +18,23 @@ SSD1306.C(196): warning C280: 'j': unreferenced local variable
 ssd1306.c(250): warning C316: unterminated conditionals
 compiling LED_Key.c...
 compiling DHT11.c...
-DHT11.c(87): warning C316: unterminated conditionals
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
 linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2CRESTART?IIC_COMM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
@@ -32,25 +46,28 @@ linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?SSD1306_DRAW?SSD1306
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SSD1306_PRINTF?SSD1306
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LEDKEYTEST?LED_KEY
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SSDSHOW?DHT11
-Program Size: data=52.0 xdata=0 code=3682
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4929
 creating hex file from "TempHumi"...
 User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
 Intel Hex file to EZ-USB Binary file conversion utility
 Copyright (c) 2012-2013, Cypress Semiconductor Inc.
-3711 Bytes written.
-Total Code Bytes = 3682
+4962 Bytes written.
+Total Code Bytes = 4929
 Conversion completed successfully.
-"TempHumi" - 0 Error(s), 15 Warning(s).
+"TempHumi" - 0 Error(s), 26 Warning(s).
 Build target 'Target 1'
 compiling dev_io.c...
-dev_io.c(8): warning C318: can't open file 'esp8266.h'
-dev_io.c(9): warning C318: can't open file 'MQTTPACKET.H'
-dev_io.c(59): warning C316: unterminated conditionals
+DEV_IO.C(139): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(260): warning C316: unterminated conditionals
 compiling iic_comm.c...
 iic_comm.c(87): warning C316: unterminated conditionals
 compiling ssd1306.c...
@@ -58,8 +75,23 @@ SSD1306.C(196): warning C280: 'j': unreferenced local variable
 ssd1306.c(250): warning C316: unterminated conditionals
 compiling LED_Key.c...
 compiling DHT11.c...
-DHT11.c(87): warning C316: unterminated conditionals
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
 linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2CRESTART?IIC_COMM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
@@ -71,25 +103,28 @@ linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?SSD1306_DRAW?SSD1306
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SSD1306_PRINTF?SSD1306
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LEDKEYTEST?LED_KEY
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SSDSHOW?DHT11
-Program Size: data=52.0 xdata=0 code=3682
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4926
 creating hex file from "TempHumi"...
 User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
 Intel Hex file to EZ-USB Binary file conversion utility
 Copyright (c) 2012-2013, Cypress Semiconductor Inc.
-3711 Bytes written.
-Total Code Bytes = 3682
+4959 Bytes written.
+Total Code Bytes = 4926
 Conversion completed successfully.
-"TempHumi" - 0 Error(s), 15 Warning(s).
+"TempHumi" - 0 Error(s), 26 Warning(s).
 Build target 'Target 1'
 compiling dev_io.c...
-dev_io.c(8): warning C318: can't open file 'esp8266.h'
-dev_io.c(9): warning C318: can't open file 'MQTTPACKET.H'
-dev_io.c(59): warning C316: unterminated conditionals
+DEV_IO.C(139): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(261): warning C316: unterminated conditionals
 compiling iic_comm.c...
 iic_comm.c(87): warning C316: unterminated conditionals
 compiling ssd1306.c...
@@ -97,8 +132,23 @@ SSD1306.C(196): warning C280: 'j': unreferenced local variable
 ssd1306.c(250): warning C316: unterminated conditionals
 compiling LED_Key.c...
 compiling DHT11.c...
-DHT11.c(93): warning C316: unterminated conditionals
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
 linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2CRESTART?IIC_COMM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
@@ -110,25 +160,28 @@ linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?SSD1306_DRAW?SSD1306
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SSD1306_PRINTF?SSD1306
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LEDKEYTEST?LED_KEY
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SSDSHOW?DHT11
-Program Size: data=52.0 xdata=0 code=3742
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4929
 creating hex file from "TempHumi"...
 User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
 Intel Hex file to EZ-USB Binary file conversion utility
 Copyright (c) 2012-2013, Cypress Semiconductor Inc.
-3771 Bytes written.
-Total Code Bytes = 3742
+4962 Bytes written.
+Total Code Bytes = 4929
 Conversion completed successfully.
-"TempHumi" - 0 Error(s), 15 Warning(s).
+"TempHumi" - 0 Error(s), 26 Warning(s).
 Build target 'Target 1'
 compiling dev_io.c...
-dev_io.c(8): warning C318: can't open file 'esp8266.h'
-dev_io.c(9): warning C318: can't open file 'MQTTPACKET.H'
-dev_io.c(59): warning C316: unterminated conditionals
+DEV_IO.C(139): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(254): warning C316: unterminated conditionals
 compiling iic_comm.c...
 iic_comm.c(87): warning C316: unterminated conditionals
 compiling ssd1306.c...
@@ -136,8 +189,21 @@ SSD1306.C(196): warning C280: 'j': unreferenced local variable
 ssd1306.c(250): warning C316: unterminated conditionals
 compiling LED_Key.c...
 compiling DHT11.c...
-DHT11.c(93): warning C316: unterminated conditionals
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
 linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?I2CRESTART?IIC_COMM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
@@ -149,17 +215,2009 @@ linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?SSD1306_DRAW?SSD1306
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SSD1306_PRINTF?SSD1306
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LEDKEYTEST?LED_KEY
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SSDSHOW?DHT11
-Program Size: data=52.0 xdata=0 code=3742
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4888
 creating hex file from "TempHumi"...
 User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
 Intel Hex file to EZ-USB Binary file conversion utility
 Copyright (c) 2012-2013, Cypress Semiconductor Inc.
-3771 Bytes written.
-Total Code Bytes = 3742
+4921 Bytes written.
+Total Code Bytes = 4888
 Conversion completed successfully.
-"TempHumi" - 0 Error(s), 15 Warning(s).
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(139): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(254): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4888
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+4921 Bytes written.
+Total Code Bytes = 4888
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(139): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(266): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4971
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5004 Bytes written.
+Total Code Bytes = 4971
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(139): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(266): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4971
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5004 Bytes written.
+Total Code Bytes = 4971
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(139): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(266): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4968
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5001 Bytes written.
+Total Code Bytes = 4968
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 26 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(139): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(267): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4971
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5004 Bytes written.
+Total Code Bytes = 4971
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(132): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(269): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4981
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5014 Bytes written.
+Total Code Bytes = 4981
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(132): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(271): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4991
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5024 Bytes written.
+Total Code Bytes = 4991
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(124): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(273): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5001
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5034 Bytes written.
+Total Code Bytes = 5001
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(122): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(272): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4998
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5031 Bytes written.
+Total Code Bytes = 4998
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(122): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(270): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=4998
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5031 Bytes written.
+Total Code Bytes = 4998
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(122): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(265): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=128.0 xdata=4473 code=5000
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5033 Bytes written.
+Total Code Bytes = 5000
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 27 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(122): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(275): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5038
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5071 Bytes written.
+Total Code Bytes = 5038
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 27 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(122): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(276): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5030
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5063 Bytes written.
+Total Code Bytes = 5030
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 27 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(122): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(276): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5030
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5063 Bytes written.
+Total Code Bytes = 5030
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 27 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(122): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(276): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5038
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5071 Bytes written.
+Total Code Bytes = 5038
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 27 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(122): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(276): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5041
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5074 Bytes written.
+Total Code Bytes = 5041
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 26 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(122): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(286): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5079
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5112 Bytes written.
+Total Code Bytes = 5079
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 26 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(124): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(289): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5076
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5109 Bytes written.
+Total Code Bytes = 5076
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 28 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(290): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5083
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5116 Bytes written.
+Total Code Bytes = 5083
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 28 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(275): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5083
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5116 Bytes written.
+Total Code Bytes = 5083
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 28 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(275): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5082
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5115 Bytes written.
+Total Code Bytes = 5082
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 28 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(275): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5085
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5118 Bytes written.
+Total Code Bytes = 5085
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 27 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(274): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=122.0 xdata=4473 code=5091
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5124 Bytes written.
+Total Code Bytes = 5091
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 25 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(274): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5082
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5115 Bytes written.
+Total Code Bytes = 5082
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 28 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(273): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=128.0 xdata=4473 code=5080
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5113 Bytes written.
+Total Code Bytes = 5080
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 29 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(273): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=128.0 xdata=4473 code=5080
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5113 Bytes written.
+Total Code Bytes = 5080
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 29 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(272): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MQTTCONNECT?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=128.0 xdata=4473 code=5080
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5113 Bytes written.
+Total Code Bytes = 5080
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 29 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(272): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSD1306_PRINTF1?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=125.0 xdata=4473 code=5083
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5116 Bytes written.
+Total Code Bytes = 5083
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 28 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(272): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(97): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=118.0 xdata=4473 code=5156
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5193 Bytes written.
+Total Code Bytes = 5156
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 27 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+dev_io.c(272): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(98): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=118.0 xdata=4473 code=5159
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5196 Bytes written.
+Total Code Bytes = 5159
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 27 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(125): warning C206: 'ABCShow': missing function-prototype
+DEV_IO.C(200): warning C280: 'Restart': unreferenced label
+dev_io.c(224): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(98): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=118.0 xdata=4473 code=5117
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5154 Bytes written.
+Total Code Bytes = 5117
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 28 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(116): warning C206: 'ABCShow': missing function-prototype
+DEV_IO.C(191): warning C280: 'Restart': unreferenced label
+dev_io.c(215): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(98): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=116.0 xdata=4473 code=5015
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5048 Bytes written.
+Total Code Bytes = 5015
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 28 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(116): warning C206: 'ABCShow': missing function-prototype
+DEV_IO.C(191): warning C280: 'Restart': unreferenced label
+dev_io.c(215): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(98): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=116.0 xdata=4473 code=5015
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5048 Bytes written.
+Total Code Bytes = 5015
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 28 Warning(s).
+Build target 'Target 1'
+compiling dev_io.c...
+DEV_IO.C(116): warning C206: 'ABCShow': missing function-prototype
+DEV_IO.C(192): warning C280: 'Restart': unreferenced label
+dev_io.c(222): warning C316: unterminated conditionals
+compiling iic_comm.c...
+iic_comm.c(87): warning C316: unterminated conditionals
+compiling ssd1306.c...
+SSD1306.C(196): warning C280: 'j': unreferenced local variable
+ssd1306.c(250): warning C316: unterminated conditionals
+compiling LED_Key.c...
+compiling DHT11.c...
+DHT11.c(98): warning C316: unterminated conditionals
+compiling ESP8266.c...
+ESP8266.C(74): warning C280: 'h': unreferenced local variable
+ESP8266.C(74): warning C280: 'l': unreferenced local variable
+ESP8266.C(122): warning C280: 'temp_data': unreferenced local variable
+ESP8266.C(122): warning C280: 'h': unreferenced local variable
+ESP8266.C(122): warning C280: 'l': unreferenced local variable
+ESP8266.c(147): warning C316: unterminated conditionals
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?EXITSENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTSERVER?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RESET8266?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CONNECTWIFI?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SENTMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CIPMODE?DEV_IO
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CRESTART?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CACK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CNAK?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?I2CREAD?IIC_COMM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_DRAW?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SSD1306_PRINTF0?SSD1306
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LEDKEYTEST?LED_KEY
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SSDSHOW?DHT11
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL0_SENDSTRING1?ESP8266
+Program Size: data=118.0 xdata=4473 code=5030
+creating hex file from "TempHumi"...
+User command #1: ..\..\Bin\hex2bix -i -f 0xC2 -o TempHumi.iic TempHumi.hex
+Intel Hex file to EZ-USB Binary file conversion utility
+Copyright (c) 2012-2013, Cypress Semiconductor Inc.
+5063 Bytes written.
+Total Code Bytes = 5030
+Conversion completed successfully.
+"TempHumi" - 0 Error(s), 28 Warning(s).

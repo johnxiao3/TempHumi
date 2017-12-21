@@ -3,6 +3,7 @@
 "ssd1306.obj",
 "..\..\Target\Lib\LP\EZUSB.LIB",
 "LED_Key.obj",
-"DHT11.obj" 
+"DHT11.obj",
+"ESP8266.obj" 
 TO "TempHumi" 
 RAMSIZE(256) 

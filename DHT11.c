@@ -8,7 +8,7 @@
 
 #include "DHT11.h"
 
-int dht11_dat[5] = { 0, 0, 0, 0, 0 };
+unsigned char dht11_dat[5] = { 0, 0, 0, 0, 0 };
 
 void SSDShow(unsigned char i)
 {
@@ -41,6 +41,9 @@ Resignal:
 	 Delay(20);
 	 DHT=1;
 	 OED=0xef;
+
+	ES0 = 0;//stop the serial break
+
 	 while((DHT==1)&&(a<254))
 	 	a++;
 	 if (a>=254) goto Resignal; 
@@ -60,34 +63,36 @@ Resignal:
 			while(DHT==0);
 			while(DHT==1)
 				a++;
-			if (a>0x0f)
+			if (a>0x1f)
 			   dht11_dat[i]|=(0x80>>j);
 		}
 	 } 
-	 
-	 //SSDShow(dht11_dat[0]);
-	 //ssd1306_printchar('-');
-	 //SSDShow(dht11_dat[1]);
-	 //ssd1306_printchar('-');
-	 //SSDShow(dht11_dat[2]);
-	 //ssd1306_printchar('-');
-	 //SSDShow(dht11_dat[3]);
-	 //ssd1306_printchar('-');
-	 //ssd1306_printchar('-');
-	 //ssd1306_printchar('-');
-	 //ssd1306_printchar('-');
-	 //ssd1306_printchar('-');
+	 ES0 = 1;//stop the serial break
+	 /*ssd1306_clear();
+	 SSDShow(dht11_dat[0]);
+	 ssd1306_printchar('-');
+	 SSDShow(dht11_dat[1]);
+	 ssd1306_printchar('-');
+	 SSDShow(dht11_dat[2]);
+	 ssd1306_printchar('-');
+	 SSDShow(dht11_dat[3]);
+	 ssd1306_printchar('-');
+	 ssd1306_printchar('-');
+	 ssd1306_printchar('-');
+	 ssd1306_printchar('-');
+	 ssd1306_printchar('-');
 
 	 ssd1306_printf1("----------------");	 
-	 ssd1306_printf1("Humidity:");
+	 ssd1306_printf1("Humidity:");	  */
+	 ssd1306_clear();
 	 ssd1306_printchar(dht11_dat[0]/10+0x30);
 	 ssd1306_printchar((dht11_dat[0]%10)+0x30);
 	 ssd1306_printchar('%');
-	 ssd1306_printf1("    ");
-	 ssd1306_printf1("Temperat:");
+	 ssd1306_printf1(" ");
+	 //ssd1306_printf1("Temperat:");
 	 ssd1306_printchar(dht11_dat[2]/10+0x30);
 	 ssd1306_printchar((dht11_dat[2]%10)+0x30);
-	 ssd1306_printchar('C');
+	 ssd1306_printchar('C'); 
 	 //SSDShow(dht11_dat[0]);
 }
 				

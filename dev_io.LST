@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   DEV_IO                                                                12/17/2017 22:58:50 PAGE 1   
+C51 COMPILER V9.00   DEV_IO                                                                12/20/2017 21:57:44 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE DEV_IO
@@ -14,71 +14,238 @@ line level    source
    5          #include "iic_comm.h"
    6          #include "ssd1306.h"
    7          
-   8          #include "esp8266.h"
-*** WARNING C318 IN LINE 8 OF dev_io.c: can't open file 'esp8266.h'
-   9          #include "MQTTPACKET.H" 
-*** WARNING C318 IN LINE 9 OF dev_io.c: can't open file 'MQTTPACKET.H'
-  10          #include "string.h"
-  11          
-  12          #include "DHT11.H"
-  13          
-  14          BYTE ScanKey();
-  15           
-  16          extern unsigned char temp_dataT[70];
-  17          extern unsigned char count;
-  18          unsigned char Lig=1;
-  19          unsigned char CountineCheck=0;
-  20          
-  21          void main(void)
-  22          {  
-  23   1              /*****************************************
-  24   1              * Write to slave device with
-  25   1              * slave address e.g. say 0x20
-  26   1              *****************************************/
-  27   1              //unsigned char ack;
-  28   1              //MQTTClient_connectOptions pdata a;
-  29   1      
-  30   1              int len=0;
-  31   1              int i=0;
-  32   1              int Light1=0;
-  33   1      
-  34   1              OED=0xff;
-  35   1              OEB=0xff;
-  36   1              OEE=0x0f;
-  37   1              Delay(1000);
-  38   1              PD5=1;  //PD5 is the display
-  39   1              //PD7=0;   //PD7 is channel 1; 0 is off; 1 is on;
-  40   1              LEDFlash();
-  41   1              
-  42   1              I2CInit();
-  43   1              ssd1306_initalize();
-  44   1      Restart0:       
-  45   1              ssd1306_clear();
-  46   1              ssd1306_printf0();
-  47   1              ssd1306_printf1("  Temperature & ");
-  48   1              ssd1306_printf1("    Humidity    ");
-  49   1              //ssd1306_printf1("----------------");
-  50   1              ssd1306_printf1("     2017-10    ");
-  51   1              ssd1306_printf1("     by John    ");
-  52   1              //Delay(5000);
-  53   1              read_dht11_dat();
-C51 COMPILER V9.00   DEV_IO                                                                12/17/2017 22:58:50 PAGE 2   
+   8          #include "ESP8266.h"    
+   9          #include "string.h"
+  10          
+  11          #include "DHT11.H"
+  12          
+  13          BYTE ScanKey();
+  14           
+  15          extern unsigned char temp_dataT[70];
+  16          extern unsigned char count;
+  17          extern unsigned char dht11_dat[5];
+  18          
+  19          /*code char Publish[93]=
+  20          {0x30,0x5d,0x00,0x5a,0x76,0x31,0x2f,0x37,0x37,0x32,0x36,0x31,0x62,0x62,0x30,0x2d
+  21          ,0x34,0x64,0x32,0x65,0x2d,0x31,0x31,0x65,0x37,0x2d,0x61,0x31,0x63,0x38,0x2d,0x30
+  22          ,0x33,0x61,0x33,0x31,0x30,0x62,0x30,0x37,0x62,0x62,0x32,0x2f,0x74,0x68,0x69,0x6e
+  23          ,0x67,0x73,0x2f,0x64,0x63,0x37,0x37,0x63,0x32,0x32,0x30,0x2d,0x34,0x64,0x38,0x33
+  24          ,0x2d,0x31,0x31,0x65,0x37,0x2d,0x39,0x30,0x64,0x63,0x2d,0x63,0x64,0x36,0x33,0x39
+  25          ,0x63,0x61,0x39,0x30,0x39,0x61,0x38,0x2f,0x64,0x61,0x74,0x61,0x2f};
+  26          void MQTTPublish0(char channel, char value)
+  27          {
+  28                  unsigned char len=0;
+  29                  for(len=0;len<93;len++)
+  30                  {
+  31                          Serial0_SendChar(Publish[len]);
+  32                  }
+  33                  Serial0_SendChar(channel+0x30);
+  34                  Serial0_SendChar(value+0x30);
+  35          }*/
+  36          
+  37          
+  38          code char clientID[]="dc77c220-4d83-11e7-90dc-cd639ca909a8";
+  39          code char username[]="77261bb0-4d2e-11e7-a1c8-03a310b07bb2";
+  40          code char password[]="6ecdc74199d4b43d7c01c4c640162b71ab50a77c";
+  41          void MQTTConnect()
+  42          {
+  43   1              int len=0;
+  44   1              Serial0_SendChar(0x10);//header
+  45   1              len=12;
+  46   1              len+=(strlen(clientID)+2);
+  47   1              len+=(strlen(username)+2);
+  48   1              len+=(strlen(password)+2);
+  49   1              do{
+  50   2                      unsigned char SendByte=len%128;
+  51   2                      len=len/128;
+  52   2                      if(len>0)
+  53   2                      {
+  54   3                              SendByte|=0x80;
+  55   3                      }
+C51 COMPILER V9.00   DEV_IO                                                                12/20/2017 21:57:44 PAGE 2   
 
-  54   1              Delay(5000);
-  55   1              goto Restart0;
-  56   1                         
-  57   1      
-  58   1              //LEDKeyTest();
-  59   1      }
-*** WARNING C316 IN LINE 59 OF dev_io.c: unterminated conditionals
+  56   2                      Serial0_SendChar(SendByte);
+  57   2              }while (len>0);  //length
+  58   1      
+  59   1              Serial0_SendInt(6);//length of MQIsqd
+  60   1              Serial0_SendString("MQIsdp");
+  61   1              Serial0_SendChar(3);//version of MQTT
+  62   1              Serial0_SendChar(0xc2);//flags
+  63   1              Serial0_SendInt(60);//time interval
+  64   1              
+  65   1              Serial0_SendInt(strlen(clientID));
+  66   1              Serial0_SendString(clientID);
+  67   1              Serial0_SendInt(strlen(username));
+  68   1              Serial0_SendString(username);
+  69   1              Serial0_SendInt(strlen(password));
+  70   1              Serial0_SendString(password);
+  71   1              Delay(5000);
+  72   1              ABC1Show();     
+  73   1              Delay(5000);
+  74   1      }
+  75          
+  76          
+  77          void MQTTPublish(char channel, int value)
+  78          {
+  79   1              int len=0;
+  80   1              Serial0_SendChar(0x32);//header
+  81   1              len=24;
+  82   1              len+=(strlen(clientID));
+  83   1              len+=(strlen(username));
+  84   1              do{
+  85   2                      unsigned char SendByte=len%128;
+  86   2                      len=len/128;
+  87   2                      if(len>0)
+  88   2                      {
+  89   3                              SendByte|=0x80;
+  90   3                      }
+  91   2                      Serial0_SendChar(SendByte);
+  92   2              }while (len>0);  //length
+  93   1      
+  94   1              Serial0_SendChar(0);
+  95   1              Serial0_SendChar(0X5A);
+  96   1              Serial0_SendString("v1/");
+  97   1              Serial0_SendString(username);
+  98   1              Serial0_SendString("/things/");
+  99   1              Serial0_SendString(clientID);
+ 100   1              Serial0_SendString("/data/");
+ 101   1              Serial0_SendChar(channel+0x30);
+ 102   1              Serial0_SendChar(0x00);
+ 103   1              Serial0_SendChar(0x00);         
+ 104   1              Serial0_SendChar((unsigned char)(value/10)+0x30);
+ 105   1              Serial0_SendChar((value%10)+0x30);      
+ 106   1      }
+ 107          
+ 108          void exitSentMode()
+ 109          {
+ 110   1              count=0;
+ 111   1              while(count==0)
+ 112   1              {
+ 113   2                      Serial0_SendString("+++");
+ 114   2                      Delay(3000);
+ 115   2              }
+ 116   1              ABCShow();
+*** WARNING C206 IN LINE 116 OF DEV_IO.C: 'ABCShow': missing function-prototype
+C51 COMPILER V9.00   DEV_IO                                                                12/20/2017 21:57:44 PAGE 3   
+
+ 117   1              Delay(3000);
+ 118   1      }
+ 119          void connectServer()
+ 120          {
+ 121   1              Serial0_SendString("AT+CIPSTART=\"TCP\",\"mqtt.mydevices.com\",1883");
+ 122   1              Serial0_SendChar(0x0d);
+ 123   1              Serial0_SendChar(0x0a);
+ 124   1              Serial0_SendChar(0x00);
+ 125   1              Delay(10000);
+ 126   1              ABCShow();
+ 127   1              Delay(5000);
+ 128   1              ABCShow();
+ 129   1      }
+ 130          void Reset8266()
+ 131          {
+ 132   1              Serial0_SendString("AT+RST");
+ 133   1              Serial0_SendChar(0x0d);
+ 134   1              Serial0_SendChar(0x0a);
+ 135   1              Serial0_SendChar(0x00);
+ 136   1              Delay(10000);
+ 137   1              ABCShow();
+ 138   1              Delay(15000);
+ 139   1              ABCShow();
+ 140   1      }
+ 141          void connectWifi()
+ 142          {
+ 143   1              Serial0_SendString("AT+CWJAP=\"zhiyong_yang\",\"26996014\"");
+ 144   1              Serial0_SendChar(0x0d);
+ 145   1              Serial0_SendChar(0x0a);
+ 146   1              Serial0_SendChar(0x00);
+ 147   1              Delay(10000);
+ 148   1              ABCShow();
+ 149   1              Delay(10000);
+ 150   1              ABCShow();
+ 151   1      }
+ 152          void sentMode()
+ 153          {
+ 154   1              Serial0_SendString("AT+CIPSEND");
+ 155   1              Serial0_SendChar(0x0d);
+ 156   1              Serial0_SendChar(0x0a);
+ 157   1              Serial0_SendChar(0x00);
+ 158   1              Delay(10000); 
+ 159   1              ABCShow();
+ 160   1      }
+ 161          void cipMode()
+ 162          {
+ 163   1              Serial0_SendString("AT+CIPMODE=1");
+ 164   1              Serial0_SendChar(0x0d);
+ 165   1              Serial0_SendChar(0x0a);
+ 166   1              Serial0_SendChar(0x00);
+ 167   1              Delay(10000);
+ 168   1              ABCShow();
+ 169   1      }
+ 170          
+ 171          void main(void)
+ 172          {  
+ 173   1      
+ 174   1              int len=0;
+ 175   1              int light=0;
+ 176   1              int i=0;
+ 177   1      
+ 178   1              OED=0xff;
+C51 COMPILER V9.00   DEV_IO                                                                12/20/2017 21:57:44 PAGE 4   
+
+ 179   1              OEB=0xff;
+ 180   1              OEE=0x0f;
+ 181   1              Delay(1000);
+ 182   1              PD5=1;  //PD5 is the display
+ 183   1              //PD7=0;   //PD7 is channel 1; 0 is off; 1 is on;
+ 184   1              //LEDFlash();
+ 185   1              I2CInit();
+ 186   1              ssd1306_initalize();
+ 187   1              ssd1306_clear();
+ 188   1              ssd1306_printf("Temperatur2");
+ 189   1              
+ 190   1              Serial0_Init();
+ 191   1      
+ 192   1      Restart:
+ 193   1              ssd1306_clear();
+ 194   1              ssd1306_printf("restart");
+ 195   1      
+ 196   1              //exitSentMode(); 
+ 197   1              //Reset8266();
+ 198   1              //connectWifi();
+ 199   1          //connectServer();
+ 200   1              //cipMode();
+ 201   1              //sentMode();
+ 202   1              MQTTConnect();
+ 203   1              ssd1306_clear();
+ 204   1              while(1){
+ 205   2                      read_dht11_dat();         
+ 206   2                      MQTTPublish(1,dht11_dat[0]);
+ 207   2                      MQTTPublish(2,dht11_dat[2]);
+ 208   2                      if (light==0){
+ 209   3                              MQTTPublish(3,0);
+ 210   3                              light=1;
+ 211   3                      }
+ 212   2                      else
+ 213   2                      {
+ 214   3                              MQTTPublish(3,1);
+ 215   3                              light=0;
+ 216   3                      }
+ 217   2                      Delay(3000);
+ 218   2                      //ABC1Show();
+ 219   2                      count=0;
+ 220   2              } 
+ 221   1      }
+*** WARNING C280 IN LINE 192 OF DEV_IO.C: 'Restart': unreferenced label
+ 222                                           
+*** WARNING C316 IN LINE 222 OF dev_io.c: unterminated conditionals
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     95    ----
-   CONSTANT SIZE    =     68    ----
+   CODE SIZE        =    884    ----
+   CONSTANT SIZE    =    276    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      2       6
+   DATA SIZE        =   ----      15
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
